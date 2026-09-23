@@ -1,0 +1,13 @@
+{
+  "name": "aws-switch",
+  "private": true,
+  "scripts": {
+    "dev:frontend": "pnpm --filter aws-switch dev",
+    "dev:frontend:prod": "pnpm --filter aws-switch dev",
+    "build": "pnpm --filter aws-switch build",
+    "build:frontend": "pnpm --filter aws-switch build",
+    "deploy:frontend": "pnpm --filter aws-switch deploy",
+    "preview:frontend": "pnpm --filter aws-switch preview",
+    "test": "pnpm --filter aws-switch build"
+  }
+}

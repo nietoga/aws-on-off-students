@@ -1,0 +1,15 @@
+{
+  "short_name": "AWS Switch",
+  "name": "AWS Switch",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#f4f6f2",
+  "background_color": "#f4f6f2"
+}

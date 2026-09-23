@@ -1,0 +1,81 @@
+:root {
+  font-family: system-ui, sans-serif;
+  color: #1d211f;
+  background: #f3f4f1;
+  font-synthesis: none;
+  --ink: #1d211f;
+  --muted: #6c746f;
+  --line: #d9ded9;
+  --surface: #fbfcfa;
+  --surface-strong: #ffffff;
+  --accent: #176c4a;
+}
+
+* { box-sizing: border-box; }
+html, body, #app { min-width: 320px; min-height: 100%; margin: 0; }
+body { min-height: 100vh; }
+::selection { color: #fff; background: var(--accent); }
+button:focus-visible { outline: 3px solid #9ed5ba; outline-offset: 3px; }
+
+.instances-page {
+  width: min(720px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: clamp(56px, 11vh, 112px) 0 64px;
+}
+
+h1 {
+  margin: 0;
+  text-align: center;
+  color: var(--ink);
+  font-size: clamp(2.8rem, 8vw, 5rem);
+  line-height: .95;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+}
+
+.zone, .message {
+  margin: 14px 0 38px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: .01em;
+}
+
+.message { margin-top: 52px; }
+.error { color: #a52a20; }
+.instance-list { overflow: hidden; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 12px 32px rgb(39 52 45 / 6%); }
+.instance { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 22px 24px; border-bottom: 1px solid var(--line); transition: background-color 160ms ease; }
+.instance:last-child { border-bottom: 0; }
+.instance:hover { background: var(--surface-strong); }
+.instance h2 { margin: 0 0 7px; color: var(--ink); font-size: 16px; font-weight: 650; letter-spacing: -.01em; }
+.instance p { margin: 0; color: var(--muted); font: 12px ui-monospace, monospace; line-height: 1.5; }
+.instance-action { display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
+.instance-buttons { display: flex; gap: 8px; }
+.state { color: var(--muted); font: 11px ui-monospace, monospace; text-transform: uppercase; letter-spacing: .07em; }
+.state.running { color: var(--accent); }
+button { min-height: 34px; padding: 8px 13px; color: #fff; background: var(--ink); border: 1px solid var(--ink); border-radius: 7px; cursor: pointer; font: inherit; font-size: 12px; font-weight: 600; transition: background-color 140ms ease, border-color 140ms ease, transform 140ms ease; }
+button:hover { background: #343b37; border-color: #343b37; }
+button:active { transform: translateY(1px); }
+button:disabled { cursor: wait; opacity: .45; transform: none; }
+.copy-button { color: var(--ink); background: transparent; border-color: var(--line); }
+.copy-button:hover { color: var(--ink); background: #eef1ed; border-color: #bcc7c0; }
+.ssh-backdrop, .confirm-backdrop { position: fixed; inset: 0; display: grid; place-items: center; padding: 20px; background: rgb(24 31 27 / 42%); }
+.ssh-modal, .confirm-modal { width: min(560px, 100%); padding: 28px; background: var(--surface-strong); border: 1px solid rgb(255 255 255 / 70%); border-radius: 14px; box-shadow: 0 24px 64px rgb(18 28 22 / 22%); }
+.ssh-modal-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
+.ssh-label { margin: 0 0 8px; color: var(--muted); font: 11px ui-monospace, monospace; letter-spacing: .1em; }
+.ssh-modal h2, .confirm-modal h2 { margin: 0; color: var(--ink); font-size: 20px; font-weight: 700; letter-spacing: -.02em; }
+.close-button { min-height: 0; padding: 0 4px; color: var(--muted); background: transparent; border-color: transparent; font-size: 24px; line-height: 1; }
+.close-button:hover { color: var(--ink); background: transparent; border-color: transparent; }
+.ssh-modal pre { overflow-x: auto; margin: 24px 0; padding: 16px; color: #e9f1eb; background: #202722; border-radius: 8px; font: 12px/1.8 ui-monospace, monospace; }
+.ssh-modal-actions { display: flex; justify-content: flex-end; gap: 8px; }
+.confirm-modal { width: min(420px, 100%); }
+.confirm-message { margin: 14px 0 26px; color: #4e5852; font-size: 14px; line-height: 1.55; }
+
+@media (max-width: 560px) {
+  .instances-page { width: min(calc(100% - 28px), 720px); padding-top: 48px; }
+  .instance { align-items: flex-start; flex-direction: column; gap: 15px; padding: 19px 18px; }
+  .instance-action { width: 100%; justify-content: space-between; }
+  .instance-buttons button { flex: 1; }
+  .instance-buttons { width: 100%; }
+  .ssh-modal, .confirm-modal { padding: 22px; }
+}

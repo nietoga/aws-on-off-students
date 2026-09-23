@@ -1,0 +1,15 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "aws-switch",
+  "compatibility_date": "2026-08-06",
+  "compatibility_flags": ["nodejs_compat"],
+  "main": "src/worker.ts",
+  "vars": {
+    "AWS_REGION": "us-east-1",
+    "AWS_ZONE": "us-east-1c"
+  },
+  "assets": { "directory": "./dist" },
+  "observability": {
+    "enabled": true
+  }
+}

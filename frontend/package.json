@@ -1,0 +1,8 @@
+{
+  "name": "aws-switch",
+  "private": true,
+  "type": "module",
+  "scripts": { "dev": "pnpm build && wrangler dev --port 3000", "build": "vite build", "preview": "vite preview", "deploy": "pnpm build && wrangler deploy", "cf-typegen": "wrangler types" },
+  "dependencies": { "@tailwindcss/vite": "^4.3.3", "lucide-react": "^1.28.0", "react": "^19.2.8", "react-dom": "^19.2.8", "tailwindcss": "^4.3.3" },
+  "devDependencies": { "@types/node": "^26.1.2", "@types/react": "^19.2.18", "@types/react-dom": "^19.2.4", "@vitejs/plugin-react": "^6.0.5", "typescript": "^7.0.2", "vite": "^8.2.0", "wrangler": "^4.118.0" }
+}
